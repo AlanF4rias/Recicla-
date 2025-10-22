@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Dev_area</title>
+</head>
+<body>
+    <header>
+        <nav class="flex justify-between items-center text-black bg-[#a8ff8d] py-3 px-5">
+            <img class="max-w-25" src="/public/logo.png" alt="Logo">
+            <div class="flex gap-3 items-center">
+                <ul class="flex gap-8 md:gap-15 text-lg font-medium"> 
+                    <li><a href="../home/home.html" class="font-bold text-[#059669]">Home</a></li>
+                    <li><a href="../mapa/mapa.html" class="hover:text-gray-700">Mapa</a></li>
+                    <li><a href="../premios/premios.html" class="hover:text-gray-700">Prêmios</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-row gap-4 items-baseline mr-5">
+                </div>
+        </nav>
+    </header>
+    <main>
+        <section> <!--home-->
+          
+            <div class=" bg-gray-50 p-4 sm:p-6 lg:p-8">
+
+                <section class=" flex flex-col mb-8 justify-center items-center">
+                    <h1 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">Dashboard do Desenvolvedor</h1>
+                    
+                    <div class="flex justify-between items-center w-full max-w-4xl h-auto rounded-xl shadow-lg bg-white border border-green-200 p-6 sm:p-8">
+                        <div class="flex flex-col">
+                            <p class="text-xl sm:text-2xl font-semibold text-gray-500 uppercase tracking-wider">Status Geral da API</p>
+                            <p class="text-3xl sm:text-4xl font-bold mt-1 text-green-600">
+                                <span class="inline-block w-4 h-4 mr-2 bg-green-500 rounded-full animate-pulse"></span>
+                                Operacional
+                            </p>
+                        </div>
+                        <i class="bi bi-shield-check text-5xl sm:text-6xl text-green-500"></i>
+                    </div>
+                </section>
+
+                <section class="flex flex-col justify-center items-center mb-10">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 self-start w-full text-center">Ferramentas & Ações Rápidas</h2>
+                    
+                    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <a href="/docs/api" class="p-4 sm:p-6 rounded-xl bg-white shadow hover:shadow-lg transition duration-300 border border-gray-100 flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <i class="bi bi-file-earmark-code text-2xl text-blue-500 mr-4"></i>
+                                <p class="text-lg font-medium text-gray-700">Acessar Documentação Swagger</p>
+                            </div>
+                            <i class="bi bi-arrow-right text-xl text-gray-400"></i>
+                        </a>
+
+                        <a href="/logs" class="p-4 sm:p-6 rounded-xl bg-white shadow hover:shadow-lg transition duration-300 border border-gray-100 flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <i class="bi bi-bug text-2xl text-red-500 mr-4"></i>
+                                <p class="text-lg font-medium text-gray-700">Visualizar Logs de Erro (Last 6h)</p>
+                            </div>
+                            <p class="text-lg font-bold text-red-600">12</p>
+                        </a>
+                        
+                        <a href="/monitor" class="p-4 sm:p-6 rounded-xl bg-white shadow hover:shadow-lg transition duration-300 border border-gray-100 flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <i class="bi bi-bar-chart-line text-2xl text-yellow-500 mr-4"></i>
+                                <p class="text-lg font-medium text-gray-700">Métricas de Tráfego em Tempo Real</p>
+                            </div>
+                            <i class="bi bi-arrow-right text-xl text-gray-400"></i>
+                        </a>
+
+                        <a href="/config" class="p-4 sm:p-6 rounded-xl bg-white shadow hover:shadow-lg transition duration-300 border border-gray-100 flex justify-between items-center cursor-pointer">
+                            <div class="flex items-center">
+                                <i class="bi bi-gear text-2xl text-purple-500 mr-4"></i>
+                                <p class="text-lg font-medium text-gray-700">Configurações de Variáveis de Ambiente</p>
+                            </div>
+                            <i class="bi bi-arrow-right text-xl text-gray-400"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="flex flex-col justify-center items-center">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center w-full">Ambiente e Histórico</h2>
+                    
+                    <div class="bg-white shadow-xl flex flex-col w-full max-w-4xl rounded-xl p-6 sm:p-8 border border-gray-100">
+                        
+                        <p class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Status do Último Deploy</p>
+
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <p class="text-base font-medium text-gray-600">Versão Atual:</p>
+                            <p class="text-base font-semibold text-gray-900">v1.1.5-beta</p>
+                        </div>
+
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <p class="text-base font-medium text-gray-600">Commit ID (SHA):</p>
+                            <p class="text-base font-mono text-gray-700">a9f3c7e</p>
+                        </div>
+                        
+                        <div class="flex justify-between items-center py-2">
+                            <p class="text-base font-medium text-gray-600">Taxa de Erro (última hora):</p>
+                            <p class="text-base font-bold text-red-500">0.05%</p>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </section>
+        <section> <!--mapa-->
+            <div class="flex">
+
+            <aside class="bg-gray-100 w-[30%] h-[33.3rem] border-2 border-gray-300 flex flex-col items-center p-4 overflow-y-auto">
+                
+                <div class="relative w-[90%] mt-2 mb-6">
+                    <label for="coord-search" class="text-sm font-semibold text-gray-700 block mb-1">Buscar Ponto (Lat/Lng ou ID)</label>
+                    <input id="coord-search" type="text" placeholder="Ex: -23.55, -46.63 ou ID: 1234" class="bg-white w-full pr-10 pl-3 py-2 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500 text-sm">
+                    <i class="bi bi-geo-alt absolute right-3 top-2/3 transform -translate-y-1/2 text-gray-500"></i>
+                </div>
+                
+                <h2 class="font-bold text-lg text-gray-800 mb-3 border-b border-gray-300 w-[90%] pb-1">Testar Endpoints da API 🧪</h2>
+                <div class="mt-1 grid grid-cols-2 gap-2 w-[90%]">
+                    
+                    <button class="bg-green-500 hover:bg-green-600 text-white flex items-center justify-center p-2 rounded-lg text-sm transition duration-150 shadow">
+                        <i class="bi bi-pin-map mr-2"></i>
+                        <p>Adicionar / postos</p>
+                    </button>
+                    
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center p-2 rounded-lg text-sm transition duration-150 shadow">
+                        <i class="bi bi-trash mr-2"></i>
+                        <p>Adicionar / residuos</p>
+                    </button>
+                    
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-800 flex items-center justify-center p-2 rounded-lg text-sm transition duration-150 shadow">
+                        <i class="bi bi-signpost-2 mr-2"></i>
+                        <p>Postar /rotas</p>
+                    </button>
+
+                    <button class="bg-purple-500 hover:bg-purple-600 text-white flex items-center justify-center p-2 rounded-lg text-sm transition duration-150 shadow">
+                        <i class="bi bi-reverse-layout-text-window-reverse mr-2"></i>
+                        <p>Adicionar / geocode</p>
+                    </button>
+                </div>
+                
+                <h2 class="font-bold text-lg text-gray-800 mt-6 mb-3 border-b border-gray-300 w-[90%] pb-1">Latência do Serviço de Mapa (ms) ⏱️</h2>
+                <div class="w-[90%] mt-2 flex flex-col gap-2">
+                    
+                    <div class="bg-white p-2 rounded-lg flex justify-between items-center shadow-sm border border-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-server text-lg text-green-600"></i>
+                            <p class="font-medium text-sm">Dados de Postos</p>
+                        </div>
+                        <p class="font-bold text-sm text-green-600">85ms</p>
+                    </div>
+                    
+                    <div class="bg-white p-2 rounded-lg flex justify-between items-center shadow-sm border border-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-clock text-lg text-yellow-600"></i>
+                            <p class="font-medium text-sm">Serviço de Roteamento</p>
+                        </div>
+                        <p class="font-bold text-sm text-yellow-600">210ms</p>
+                    </div>
+                    
+                    <div class="bg-white p-2 rounded-lg flex justify-between items-center shadow-sm border border-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-globe text-lg text-red-600"></i>
+                            <p class="font-medium text-sm">Provedor Externo</p>
+                        </div>
+                        <p class="font-bold text-sm text-red-600">Falha!</p>
+                    </div>
+                </div>
+            </aside>
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6784.060148035256!2d-52.340404744396956!3d-31.769665671351756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1759520237067!5m2!1spt-BR!2sbr" width="1000" height="533" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-[70%] h-[33.3rem]"></iframe>
+
+            </div>
+        </section>
+        <section> <!--prêmios-->
+            <div class="min-h-screen bg-gray-50 pb-10">
+                <section class="bg-indigo-50 py-10 mb-8 shadow-md">
+                        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h1 class="text-4xl font-extrabold text-indigo-700 text-center mb-6">Gerenciamento de Catálogo de Recompensas</h1>
+                            
+                            <div class="flex justify-between items-center w-full max-w-lg mx-auto h-auto rounded-xl bg-white my-4 p-5 shadow-xl border border-indigo-300">
+                                <div class="flex flex-col">
+                                    <p class="text-xl font-medium text-gray-600">Status da API /rewards</p>
+                                    <p class="text-[2.5rem] font-bold text-green-600">ONLINE</p> 
+                                </div>
+                                <i class="bi bi-gear text-5xl text-indigo-500"></i> 
+                            </div>
+                            
+                            <nav class="flex justify-center flex-wrap gap-3 mt-6">
+                                <button class="px-5 py-2 text-white bg-indigo-600 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-indigo-700 active">Todos os Itens (35)</button>
+                                <button class="px-5 py-2 text-green-600 border border-green-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-green-600 hover:text-white">Ativos (28)</button>
+                                <button class="px-5 py-2 text-red-600 border border-red-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-red-600 hover:text-white">Inativos (5)</button>
+                                <button class="px-5 py-2 text-yellow-600 border border-yellow-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-yellow-600 hover:text-white">Baixo Estoque (2)</button>
+                                <button class="px-5 py-2 text-white bg-green-500 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-green-600 ml-4"><i class="bi bi-plus-circle mr-2"></i> Novo Item</button>
+                            </nav>
+                        </div>
+                </section>
+                <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Itens do Banco de Dados para Edição Rápida</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-green-300">
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Cupom de 20% em Loja Parceira</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-0010</span> | Categoria: Cupom</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 100 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-check-circle"></i> Testar Resgate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-yellow-300 relative">
+                                <span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Baixo Estoque</span>
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ecobag de Algodão Orgânico</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-0045</span> | Categoria: Produto</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 350 pts</p>
+                                        <p class="font-semibold text-red-500">Estoque: 7</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-boxes"></i> Reabastecer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-200 rounded-xl shadow-lg overflow-hidden opacity-80 border border-gray-400">
+                                <div class="h-40 bg-cover bg-center grayscale flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center relative">
+                                    <span class="absolute top-[-10px] right-5 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">INATIVO</span>
+
+                                    <h3 class="text-xl font-bold text-gray-600 mb-2">Mini-Curso de Compostagem</h3>
+                                    <p class="text-gray-500 text-sm mb-4">ID: <span class="font-mono text-gray-600">RWD-0099</span> | Categoria: Serviço</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-red-600">Status: Inativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 600 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-lightning-charge"></i> Ativar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-300">
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Doação para Projeto de Limpeza de Praias</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-D003</span> | Tipo: Doação</p>
+
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 200 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <button class="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 cursor-pointer text-sm">
+                                        <i class="bi bi-activity mr-2"></i> Verificar Webhook
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+        </section>
+    </main>
+</body>
+</html>
