@@ -1,4 +1,4 @@
-const pool = require('../config/db');
+const pool = require('../ConfigBD/BD.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -27,38 +27,24 @@ exports.registrarCPF = async (req, res) => {
 
 // Registrar CNPJ (com transação)
 exports.registrarCNPJ = async (req, res) => {
-    // O body da requisição deve conter o usuário e o endereço
-    const { razaoSocial, nomeFantasia, cnpj, email, telefone, senha, endereco } = req.body;
-    const { rua, numero, complemento, bairro, cidade, estado, cep } = endereco;
+    const { razaoSocial, nomeFantasia, cnpj, email, telefone, senha } = req.body;
 
-    let connection;
     try {
-        connection = await pool.getConnection(); // Pega uma conexão do pool
-        await connection.beginTransaction(); // Inicia a transação
-
-        // 1. Insere o Endereço
-        const [enderecoResult] = await connection.query(
-            "INSERT INTO Endereco (Rua, Numero, Complemento, Bairro, Cidade, Estado, CEP) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [rua, numero, complemento, bairro, cidade, estado, cep]
-        );
-        const enderecoId = enderecoResult.insertId;
-
-        // 2. Insere o UsuarioCNPJ com o ID do endereço
+        // 2. Criptografa a senha
         const hashDaSenha = await bcrypt.hash(senha, 10);
-        await connection.query(
-            "INSERT INTO UsuarioCNPJ (RazaoSocial, NomeFantasia, CNPJ, Email, Telefone, SenhaHash, Endereco_ID) VALUES (?, ?, ?, ?, ?, ?, ?)",
-            [razaoSocial, nomeFantasia, cnpj, email, telefone, hashDaSenha, enderecoId]
+
+        // 3. Insere diretamente na tabela UsuarioCNPJ
+        const [result] = await pool.query(
+            "INSERT INTO UsuarioCNPJ (RazaoSocial, NomeFantasia, CNPJ, Email, Telefone, SenhaHash) VALUES (?, ?, ?, ?, ?, ?)",
+            [razaoSocial, nomeFantasia, cnpj, email, telefone, hashDaSenha]
         );
 
-        await connection.commit(); // Confirma a transação
-        res.status(201).json({ mensagem: "Usuário CNPJ e Endereço criados!" });
+        res.status(201).json({ mensagem: "Usuário CNPJ criado com sucesso!", id: result.insertId });
 
     } catch (error) {
-        if (connection) await connection.rollback(); // Desfaz tudo se der erro
+        // Trata erros (ex: email ou CNPJ duplicado)
         console.error(error);
         res.status(500).json({ mensagem: "Erro ao registrar CNPJ", erro: error.code });
-    } finally {
-        if (connection) connection.release(); // Libera a conexão de volta pro pool
     }
 };
 

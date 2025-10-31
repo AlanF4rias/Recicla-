@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const produtoController = require('../controllers/produtoController');
-const { autenticarToken, ehCnpj, ehCpf } = require('../middleware/authMiddleware');
+const produtoController = require('../Controles/ProdutoControle');
+const { autenticarToken, ehCnpj, ehCpf } = require('../AutenticacaoMeio/AutMeio');
 
 // Rota para um CNPJ cadastrar um NOVO produto no catálogo geral
 // (autenticarToken E ehCnpj garantem que só um CNPJ logado pode fazer isso)

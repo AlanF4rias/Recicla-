@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
-const AutRotas = require('./Rotas/AutRotas');
-const ProdutoRotas = require('./Rotas/ProdutoRotas');
-const PontosRotas = require('./Rotas/PontosRotas');
+const AutRotas = require('./Rotas/AutRota');
+const ProdutoRotas = require('./Rotas/ProdutoRota');
+const PontosRotas = require('./Rotas/PontosRota');
 
 const app = express();
 app.use(cors());

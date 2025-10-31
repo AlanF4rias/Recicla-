@@ -1,4 +1,4 @@
-const pool = require('../config/db');
+const pool = require('../ConfigBD/BD.js');
 
 // CNPJ dá pontos para um CPF
 exports.darPontos = async (req, res) => {

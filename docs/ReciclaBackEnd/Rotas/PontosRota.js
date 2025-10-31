@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const pontosController = require('../controllers/pontosController');
-const { autenticarToken, ehCnpj, ehCpf } = require('../middleware/authMiddleware');
+const pontosController = require('../Controles/PontosControle');
+const { autenticarToken, ehCnpj, ehCpf } = require('../AutenticacaoMeio/AutMeio');
 
 // Rota para um CNPJ dar pontos a um CPF
 router.post('/dar', [autenticarToken, ehCnpj], pontosController.darPontos);
