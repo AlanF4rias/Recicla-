@@ -86,9 +86,135 @@
                     <p class="text-xs text-center text-gray-400 mt-4">Os dados serão processados e seus pontos serão creditados em sua conta.</p>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+        <section> <!--prêmios-->
+            <div class="min-h-screen bg-gray-50 pb-10">
+                <section class="bg-indigo-50 py-10 mb-8 shadow-md">
+                        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h1 class="text-4xl font-extrabold text-indigo-700 text-center mb-6">Gerenciamento de Catálogo de Recompensas</h1>
+                            
+                            <div class="flex justify-between items-center w-full max-w-lg mx-auto h-auto rounded-xl bg-white my-4 p-5 shadow-xl border border-indigo-300">
+                                <div class="flex flex-col">
+                                    <p class="text-xl font-medium text-gray-600">Status da API /rewards</p>
+                                    <p class="text-[2.5rem] font-bold text-green-600">ONLINE</p> 
+                                </div>
+                                <i class="bi bi-gear text-5xl text-indigo-500"></i> 
+                            </div>
+                            
+                            <nav class="flex justify-center flex-wrap gap-3 mt-6">
+                                <button class="px-5 py-2 text-white bg-indigo-600 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-indigo-700 active">Todos os Itens (35)</button>
+                                <button class="px-5 py-2 text-green-600 border border-green-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-green-600 hover:text-white">Ativos (28)</button>
+                                <button class="px-5 py-2 text-red-600 border border-red-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-red-600 hover:text-white">Inativos (5)</button>
+                                <button class="px-5 py-2 text-yellow-600 border border-yellow-600 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-yellow-600 hover:text-white">Baixo Estoque (2)</button>
+                                <button class="px-5 py-2 text-white bg-green-500 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-green-600 ml-4"><i class="bi bi-plus-circle mr-2"></i> Novo Item</button>
+                            </nav>
+                        </div>
+                </section>
+                <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Itens do Banco de Dados para Edição Rápida</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-green-300">
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Cupom de 20% em Loja Parceira</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-0010</span> | Categoria: Cupom</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 100 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-check-circle"></i> Testar Resgate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
-    <script src="dev_area.js"></script>
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-yellow-300 relative">
+                                <span class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Baixo Estoque</span>
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ecobag de Algodão Orgânico</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-0045</span> | Categoria: Produto</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 350 pts</p>
+                                        <p class="font-semibold text-red-500">Estoque: 7</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-boxes"></i> Reabastecer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-200 rounded-xl shadow-lg overflow-hidden opacity-80 border border-gray-400">
+                                <div class="h-40 bg-cover bg-center grayscale flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center relative">
+                                    <span class="absolute top-[-10px] right-5 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">INATIVO</span>
+
+                                    <h3 class="text-xl font-bold text-gray-600 mb-2">Mini-Curso de Compostagem</h3>
+                                    <p class="text-gray-500 text-sm mb-4">ID: <span class="font-mono text-gray-600">RWD-0099</span> | Categoria: Serviço</p>
+                                    
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-red-600">Status: Inativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 600 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <div class="flex gap-2">
+                                        <button class="w-1/2 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="w-1/2 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 cursor-pointer text-sm">
+                                            <i class="bi bi-lightning-charge"></i> Ativar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-300">
+                                <div class="h-40 bg-cover bg-center bg-gray-100 flex items-center justify-center text-gray-500 text-lg">
+                                    [Image Placeholder]
+                                </div>
+                                <div class="p-5 text-center">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Doação para Projeto de Limpeza de Praias</h3>
+                                    <p class="text-gray-600 text-sm mb-4">ID: <span class="font-mono text-indigo-600">RWD-D003</span> | Tipo: Doação</p>
+
+                                    <div class="flex justify-around text-sm mb-4 border-y py-2">
+                                        <p class="font-semibold text-green-600">Status: Ativo</p>
+                                        <p class="font-semibold text-gray-700">Custo: 200 pts</p>
+                                        <p class="font-semibold text-gray-700">Estoque: ∞</p>
+                                    </div>
+                                    
+                                    <button class="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 transition duration-300 cursor-pointer text-sm">
+                                        <i class="bi bi-activity mr-2"></i> Verificar Webhook
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+        </section>
+    </main>
 </body>
 </html>
