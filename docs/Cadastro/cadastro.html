@@ -1,37 +1,58 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro – Pessoa / Empresa</title>
   <link rel="stylesheet" href="../output.css">
   <style>
-    .fade-enter{opacity:0; transform:translateY(6px)}
-    .fade-enter-active{transition:all .28s cubic-bezier(.2,.8,.2,1); opacity:1; transform:translateY(0)}
-    .fade-leave{opacity:1; transform:translateY(0)}
-    .fade-leave-active{transition:all .24s cubic-bezier(.2,.8,.2,1); opacity:0; transform:translateY(-4px)}
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(6px)
+    }
+
+    .fade-enter-active {
+      transition: all .28s cubic-bezier(.2, .8, .2, 1);
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .fade-leave {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .fade-leave-active {
+      transition: all .24s cubic-bezier(.2, .8, .2, 1);
+      opacity: 0;
+      transform: translateY(-4px)
+    }
   </style>
 </head>
-<body class="min-h-screen bg-[#E7EBE6] text-[#141514] flex items-center justify-center p-6">
+
+<body class="min-h-screen font-sans bg-gray-50 text-gray-800 flex items-center justify-center p-6">
   <main class="w-full max-w-3xl">
-    <section class="bg-white border border-[#BEC3BD] rounded-2xl shadow-xl overflow-hidden">
+    <section class="bg-white border border-gray-300 rounded-2xl shadow-xl overflow-hidden">
       <header class="flex items-center justify-between gap-4 p-5 border-b border-slate-700/50">
         <div class="flex flex-col items-start">
           <img src="../../public/logo.png" alt="logos" class="h-20 mb-2">
           <h1 class="text-xl font-bold">Cadastro</h1>
-          <p class="text-sm text-[#747773]">Escolha o tipo de cadastro e preencha os dados</p>
+          <p class="text-sm text-gray-600">Escolha o tipo de cadastro e preencha os dados</p>
         </div>
         <fieldset class="flex items-center gap-2" aria-label="Tipo de cadastro">
           <legend class="sr-only">Tipo</legend>
 
           <label class="relative inline-flex items-center cursor-pointer select-none">
             <input type="radio" name="tipo" id="radPessoa" value="pessoa" checked class="peer sr-only">
-            <span class="px-3 py-1.5 rounded-full border border-[#BEC3BD] text-sm font-semibold peer-checked:bg-[#4EB003] peer-checked:text-white peer-checked:border-[#03B90E] transition">Pessoa</span>
+            <span
+              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-700 transition">Pessoa</span>
           </label>
 
           <label class="relative inline-flex items-center cursor-pointer select-none">
             <input type="radio" name="tipo" id="radEmpresa" value="empresa" class="peer sr-only">
-            <span class="px-3 py-1.5 rounded-full border border-[#BEC3BD] text-sm font-semibold peer-checked:bg-[#4EB003] peer-checked:text-white peer-checked:border-[#03B90E] transition">Empresa</span>
+            <span
+              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-700 transition">Empresa</span>
           </label>
         </fieldset>
       </header>
@@ -44,31 +65,40 @@
           <form id="formPessoa" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label for="u-nome" class="block text-sm font-semibold mb-1">Nome completo</label>
-              <input id="u-nome" name="nome" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-nome" name="nome" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="u-cpf" class="block text-sm font-semibold mb-1">CPF</label>
-              <input id="u-cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="u-email" class="block text-sm font-semibold mb-1">E-mail</label>
-              <input id="u-email" type="email" name="email" autocomplete="email" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-email" type="email" name="email" autocomplete="email" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="u-fone" class="block text-sm font-semibold mb-1">Telefone</label>
-              <input id="u-fone" name="fone" inputmode="tel" placeholder="(00) 00000-0000" class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-fone" name="fone" inputmode="tel" placeholder="(00) 00000-0000"
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="u-senha" class="block text-sm font-semibold mb-1">Senha</label>
-              <input id="u-senha" name="senha" type="password"  required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-senha" name="senha" type="password" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="u-senhaconf" class="block text-sm font-semibold mb-1">Confirmação</label>
-              <input id="u-senhaconf" name="senha" type="password" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="u-senhaconf" name="senha" type="password" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div class="md:col-span-2 flex gap-3 pt-1">
-              <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-[#4EB003] hover:text-white text-[#141514] font-bold px-4 py-2 border border-[#BEC3BD] transition-colors">Cadastrar pessoa</button>
-              <button type="reset" class="inline-flex items-center justify-center rounded-xl bg-white text-[#141514] font-bold px-4 py-2 border border-[#BEC3BD] hover:bg-[#4EB003] hover:text-white transition-colors">Limpar</button>
+              <button type="submit"
+                class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-emerald-600 hover:text-white text-gray-800 font-bold px-4 py-2 border border-gray-300 transition-colors">Cadastrar
+                pessoa</button>
+              <button type="reset"
+                class="inline-flex items-center justify-center rounded-xl bg-white text-gray-800 font-bold px-4 py-2 border border-gray-300 hover:bg-emerald-600 hover:text-white transition-colors">Limpar</button>
             </div>
           </form>
           <p class="text-sm text-slate-400">Se você representa uma empresa, selecione “Empresa” acima.</p>
@@ -80,39 +110,50 @@
           <form id="formEmpresa" class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label for="e-razao" class="block text-sm font-semibold mb-1">Razão social</label>
-              <input id="e-razao" name="razao" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-razao" name="razao" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-cnpj" class="block text-sm font-semibold mb-1">CNPJ</label>
-              <input id="e-cnpj" name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-cnpj" name="cnpj" inputmode="numeric" placeholder="00.000.000/0000-00" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-fantasia" class="block text-sm font-semibold mb-1">Nome fantasia</label>
-              <input id="e-fantasia" name="fantasia" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-fantasia" name="fantasia" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-insc" class="block text-sm font-semibold mb-1">Inscrição estadual</label>
-              <input id="e-insc" name="ie" class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-insc" name="ie"
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-email" class="block text-sm font-semibold mb-1">E-mail</label>
-              <input id="e-email" type="email" name="email" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-email" type="email" name="email" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-fone" class="block text-sm font-semibold mb-1">Telefone</label>
-              <input id="e-fone" name="fone" inputmode="tel" placeholder="(00) 00000-0000" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-fone" name="fone" inputmode="tel" placeholder="(00) 00000-0000" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-senha" class="block text-sm font-semibold mb-1">Senha</label>
-              <input id="e-senha" name="senha" type="password"  required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-senha" name="senha" type="password" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div>
               <label for="e-senhaconf" class="block text-sm font-semibold mb-1">Confirmação</label>
-              <input id="e-senhaconf" name="senha" type="password" required class="w-full rounded-xl border border-[#BEC3BD] bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-[\#4EB003]/30 focus:border-[\#4EB003]" />
+              <input id="e-senhaconf" name="senha" type="password" required
+                class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 outline-none focus:ring-4 focus:ring-emerald-500/30 focus:border-emerald-500" />
             </div>
             <div class="md:col-span-2 flex gap-3 pt-1">
-              <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-[#4EB003] hover:text-white text-[#141514] font-bold px-4 py-2 border border-[#BEC3BD] transition-colors">Cadastrar empresa</button>
-              <button type="reset" class="inline-flex items-center justify-center rounded-xl bg-white text-[#141514] font-bold px-4 py-2 border border-[#BEC3BD] hover:bg-[#4EB003] hover:text-white transition-colors">Limpar</button>
+              <button type="submit"
+                class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-emerald-600 hover:text-white text-gray-800 font-bold px-4 py-2 border border-gray-300 transition-colors">Cadastrar
+                empresa</button>
+              <button type="reset"
+                class="inline-flex items-center justify-center rounded-xl bg-white text-gray-800 font-bold px-4 py-2 border border-gray-300 hover:bg-emerald-600 hover:text-white transition-colors">Limpar</button>
             </div>
           </form>
           <p class="text-sm text-slate-400">Se você precisa de um cadastro pessoal, selecione “Pessoa” acima.</p>
@@ -122,4 +163,5 @@
   </main>
   <script src="cadastro.js"></script>
 </body>
+
 </html>
