@@ -37,44 +37,51 @@ exports.resgatarProduto = async (req, res) => {
         connection = await pool.getConnection();
         await connection.beginTransaction();
 
-        // 1. Busca os dados do produto (pontos e estoque) e os pontos do usuário
+        // 1. Busca os dados do produto E os dados do usuário
         const [produtoRows] = await connection.query("SELECT * FROM Produto WHERE ID = ?", [produtoId]);
         const [usuarioRows] = await connection.query("SELECT * FROM UsuarioCPF WHERE ID = ?", [usuarioCpfId]);
 
         if (produtoRows.length === 0) throw new Error("Produto não encontrado");
         if (usuarioRows.length === 0) throw new Error("Usuário não encontrado");
-
+        
         const produto = produtoRows[0];
         const usuario = usuarioRows[0];
+        const pontosNecessarios = produto.PontosPorUnidade;
 
-        // 2. Valida se o usuário tem pontos e se há estoque
-        if (usuario.Pontos < produto.PontosPorUnidade) {
+        // 2. Valida se o usuário tem pontos (REQUISITO 2)
+        if (usuario.Pontos < pontosNecessarios) {
             throw new Error("Pontos insuficientes para o resgate.");
         }
         if (produto.Estoque <= 0) {
             throw new Error("Produto fora de estoque.");
         }
 
-        // 3. Executa as atualizações (perder pontos e diminuir estoque)
-        const pontosGastos = produto.PontosPorUnidade;
+        // 3. Executa as atualizações (REQUISITO 1)
+        const novoSaldoPontos = usuario.Pontos - pontosNecessarios;
+        
         await connection.query(
-            "UPDATE UsuarioCPF SET Pontos = Pontos - ? WHERE ID = ?",
-            [pontosGastos, usuarioCpfId]
+            "UPDATE UsuarioCPF SET Pontos = ? WHERE ID = ?",
+            [novoSaldoPontos, usuarioCpfId]
         );
-
         await connection.query(
             "UPDATE Produto SET Estoque = Estoque - 1 WHERE ID = ?",
             [produtoId]
         );
 
-        // 4. Registra a transação em ResgateProduto
+        // 4. Registra a transação (do seu Recicla.sql)
         await connection.query(
             "INSERT INTO ResgateProduto (UsuarioCPF_ID, Produto_ID, PontosGastos, StatusResgate) VALUES (?, ?, ?, ?)",
-            [usuarioCpfId, produtoId, pontosGastos, 'CONCLUIDO']
+            [usuarioCpfId, produtoId, pontosNecessarios, 'CONCLUIDO']
         );
-
+        
         await connection.commit(); // Confirma
-        res.json({ mensagem: "Produto resgatado com sucesso!" });
+        
+        // SUCESSO! Envia a mensagem E o novo saldo de pontos
+        // ESTA É A MUDANÇA IMPORTANTE:
+        res.json({ 
+            mensagem: "Produto resgatado com sucesso!", 
+            novoSaldoPontos: novoSaldoPontos // <-- RETORNA O NOVO SALDO
+        });
 
     } catch (error) {
         if (connection) await connection.rollback(); // Desfaz
