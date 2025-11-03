@@ -7,6 +7,10 @@
   <title>Cadastro – Pessoa / Empresa</title>
   <link rel="stylesheet" href="../output.css">
   <style>
+    html {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+    }
+
     .fade-enter {
       opacity: 0;
       transform: translateY(6px)
@@ -46,13 +50,13 @@
           <label class="relative inline-flex items-center cursor-pointer select-none">
             <input type="radio" name="tipo" id="radPessoa" value="pessoa" checked class="peer sr-only">
             <span
-              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-700 transition">Pessoa</span>
+              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-200 peer-checked:text-white peer-checked:border-emerald-700 transition">Pessoa</span>
           </label>
 
           <label class="relative inline-flex items-center cursor-pointer select-none">
             <input type="radio" name="tipo" id="radEmpresa" value="empresa" class="peer sr-only">
             <span
-              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-700 transition">Empresa</span>
+              class="px-3 py-1.5 rounded-full border border-gray-300 text-sm font-semibold peer-checked:bg-emerald-200 peer-checked:text-white peer-checked:border-emerald-700 transition">Empresa</span>
           </label>
         </fieldset>
       </header>
