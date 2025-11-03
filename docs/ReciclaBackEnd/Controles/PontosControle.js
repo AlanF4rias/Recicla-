@@ -1,19 +1,26 @@
 const pool = require('../ConfigBD/BD.js');
 
-// CNPJ dá pontos para um CPF
+// CNPJ dá pontos para um CPF  
 exports.darPontos = async (req, res) => {
-    const { emailCpf, pontos, descricao } = req.body;
+    const { emailUsuario, pontos, descricao } = req.body;
     const cnpjId = req.usuario.id;
 
     let connection;
     try {
+        console.log('Tentando dar pontos para o email:', emailUsuario);
         connection = await pool.getConnection();
         await connection.beginTransaction();
 
         // 1. Encontrar o ID do usuário CPF pelo email
-        const [cpfRows] = await connection.query("SELECT ID FROM UsuarioCPF WHERE Email = ?", [emailCpf]);
+        const [cpfRows] = await connection.query(
+            "SELECT ID, Email FROM UsuarioCPF WHERE Email = ? AND Email IS NOT NULL", 
+            [emailUsuario]
+        );
         if (cpfRows.length === 0) {
-            throw new Error("Usuário CPF não encontrado com este email.");
+            return res.status(404).json({
+                erro: true,
+                mensagem: `Usuário CPF não encontrado com o email: ${emailUsuario}`
+            });
         }
         const cpfId = cpfRows[0].ID;
 
@@ -30,7 +37,7 @@ exports.darPontos = async (req, res) => {
         );
 
         await connection.commit();
-        res.json({ mensagem: `${pontos} pontos adicionados com sucesso a ${emailCpf}` });
+        res.json({ mensagem: `${pontos} pontos adicionados com sucesso a ${emailUsuario}` });
 
     } catch (error) {
         if (connection) await connection.rollback();

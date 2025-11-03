@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // 3. Envia a requisição para a API
-            const resposta = await fetch('http://localhost:3001/api/auth', {
+            const resposta = await fetch('http://localhost:3001/api/auth/cadastro/cnpj', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dadosUsuario)

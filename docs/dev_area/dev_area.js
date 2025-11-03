@@ -35,12 +35,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('form-coleta');
 
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            
-            event.preventDefault(); 
-            
-            console.log("Formulário interceptado! Total de Pontos calculado:", document.getElementById('total-pontos').textContent);
-        });
-    }
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const emailUsuario = document.getElementById('emailPontos').value;
+        const totalPontos = parseInt(document.getElementById('total-pontos').textContent);
+        const token = localStorage.getItem('token'); // Pega o token do CNPJ/Dev logado
+
+        if (!token) {
+            alert('Erro: Você não está logado.');
+            return;
+        }
+        if (!emailUsuario || totalPontos <= 0) { 
+            alert('Por favor, preencha o email do usuário e adicione materiais.');
+            return;
+        }
+
+        const dadosParaEnviar = {
+            emailUsuario: emailUsuario,
+            pontos: totalPontos,
+            descricao: 'Pontos adicionados via Coleta'
+        };
+
+        try {
+            const resposta = await fetch('http://localhost:3001/api/pontos/dar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(dadosParaEnviar)
+            });
+
+            const resultado = await resposta.json();
+
+            if (resposta.ok) {
+                alert(resultado.mensagem);
+                form.reset(); 
+                calcularPontos(); 
+            } else {
+                alert(`Erro: ${resultado.mensagem}`);
+            }
+
+        } catch (erro) {
+            console.error('Erro ao enviar pontos:', erro);
+            alert('Erro de conexão com a API.');
+        }
+    });
 });
