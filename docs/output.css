@@ -649,11 +649,20 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
   .gap-15 {
     gap: calc(var(--spacing) * 15);
   }
+  .gap-18 {
+    gap: calc(var(--spacing) * 18);
+  }
   .gap-25 {
     gap: calc(var(--spacing) * 25);
+  }
+  .gap-30 {
+    gap: calc(var(--spacing) * 30);
   }
   .gap-56 {
     gap: calc(var(--spacing) * 56);
@@ -912,6 +921,9 @@
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
+  }
+  .p-18 {
+    padding: calc(var(--spacing) * 18);
   }
   .p-\[1\.2rem\] {
     padding: 1.2rem;
@@ -1664,6 +1676,11 @@
       display: grid;
     }
   }
+  .md\:h-28 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 28);
+    }
+  }
   .md\:h-32 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 32);
@@ -1682,6 +1699,21 @@
   .md\:w-25 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 25);
+    }
+  }
+  .md\:w-28 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 28);
+    }
+  }
+  .md\:w-35 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 35);
+    }
+  }
+  .md\:w-38 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 38);
     }
   }
   .md\:w-48 {
