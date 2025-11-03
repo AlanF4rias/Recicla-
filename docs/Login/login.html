@@ -4,23 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="../output.css">
     <style>
         html {
             font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
         }
     </style>
+    <title>Login</title>
 </head>
 
-<body class="min-h-screen font-sans bg-gray-50 text-gray-800 antialiased">
+<body class="font-sans bg-gray-50 text-gray-800">
     <main class="min-h-screen flex items-start md:items-center justify-center pt-16 md:pt-0">
         <section class="w-full max-w-md">
             <div class="bg-white rounded-2xl shadow-lg ring-1 ring-black/5 p-8">
+                <div class="bg-white flex flex-col items-center justify-center">
+                    <a href="../index.html" aria-label="Voltar para a página inicial"
+                        title="Voltar para a página inicial">
+                        <img src="../../public/logo.png" alt="Logo - voltar para a página inicial"
+                            class="w-40 cursor-pointer" id="sobre">
+                    </a>
+                </div>
                 <div class="flex flex-col items-center gap-2 mb-6">
-                    <div class="w-[40%] h-32 rounded-full bg-emerald-100 flex items-center justify-center shadow-sm">
-                        <img src="../../public/logo.png" alt="logo" class="h-20 w-20 object-contain">
-                    </div>
                     <h1 class="text-center text-xl font-semibold mb-6">Login</h1>
 
                     <form id="loginForm" class="space-y-4" action="#" method="post">
@@ -41,14 +45,15 @@
 
                         <div class="flex items-center justify-between pt-1">
                             <button type="button" id="recSenha"
-                                class="text-sm font-medium text-emerald-600 hover:text-emerald-700 hover:underline focus:outline-none cursor-pointer">Esqueceu
+                                class="text-sm font-medium text-emerald-400 hover:text-emerald-800 hover:underline focus:outline-none cursor-pointer">Esqueceu
                                 a senha?</button>
-                            <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-xl">Entrar</button>
+                            <button type="submit"
+                                class="bg-emerald-400 text-white px-4 py-2 rounded-xl hover:bg-emerald-800">Entrar</button>
                         </div>
                     </form>
                     <p class="text-center text-sm text-gray-600 mt-6">Não tem uma conta?<a
                             href="../Cadastro/cadastro.html"
-                            class="font-medium text-emerald-700 hover:text-emerald-800 hover:underline">Cadastre-se</a>
+                            class="font-medium text-emerald-400 hover:text-emerald-800 hover:underline">Cadastre-se</a>
                     </p>
                 </div>
 
@@ -61,14 +66,14 @@
                             <div>
                                 <label for="recEmail" class="block text-sm font-medium mb-1">E-mail</label>
                                 <input id="recEmail" name="recEmail" type="email" placeholder="seuemail@exemplo.com"
-                                    class="w-full rounded-xl border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none px-3 py-2.5 shadow-sm"
+                                    class="w-full rounded-xl border border-gray-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-200 outline-none px-3 py-2.5 shadow-sm"
                                     required />
                             </div>
                             <div class="flex items-center gap-3">
                                 <button type="submit"
-                                    class="inline-flex items-center justify-center rounded-xl bg-emerald-600 text-white font-medium px-4 py-2.5 shadow hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300">Enviar</button>
+                                    class="inline-flex items-center justify-center rounded-xl bg-emerald-400 text-white font-medium px-4 py-2.5 shadow hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-300">Enviar</button>
                                 <button type="button" id="recFecha"
-                                    class="text-sm font-medium text-gray-600 hover:text-gray-800 hover:underline">Cancelar</button>
+                                    class="text-sm font-medium text-gray-400 hover:text-gray-800 hover:underline">Cancelar</button>
                             </div>
                         </form>
                     </div>
