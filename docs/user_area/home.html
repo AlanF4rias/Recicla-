@@ -20,9 +20,9 @@
             <img class="max-w-25" src="/public/logo.png" alt="Logo">
             <div class="flex gap-3 items-center">
                 <ul class="flex gap-8 md:gap-15 text-lg font-medium">
-                    <li><a href="../home/home.html" class="font-bold text-emerald-700">Home</a></li>
-                    <li><a href="../mapa/mapa.html" class="hover:text-gray-700">Mapa</a></li>
-                    <li><a href="../premios/premios.html" class="hover:text-gray-700">Prêmios</a></li>
+                    <li><a href="home.html" class="font-bold text-emerald-700">Home</a></li>
+                    <li><a href="mapa.html" class="hover:text-gray-700">Mapa</a></li>
+                    <li><a href="premios.html" class="hover:text-gray-700">Prêmios</a></li>
                 </ul>
             </div>
             <div class="flex flex-row gap-4 items-baseline mr-5">
@@ -35,7 +35,7 @@
                 class="flex justify-between items-center w-[90%] h-[2%] rounded-[1.25rem] bg-emerald-50 my-[3.68rem] mx-[3.3rem] p-[2rem]">
                 <div class="flex flex-col">
                     <p class="text-[2.125rem] font-bold text-emerald-700">Seus pontos</p>
-                    <p class="text-[2.125rem] font-bold text-emerald-700">0</p>
+                    <p class="text-[2.125rem] font-bold text-emerald-700" id="pontosHome">0</p>
                 </div>
                 <i class="bi bi-check-circle text-[4rem] text-emerald-700"></i>
             </div>
@@ -57,6 +57,7 @@
             </div>
         </section>
     </main>
+    <script src="carregaPontos.js"></script>
 </body>
 
 </html>
