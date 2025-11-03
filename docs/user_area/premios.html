@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
+    <title>Prêmios</title>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <header>
+        <nav class="flex justify-between items-center text-black bg-emerald-200 py-3 px-5">
+            <img class="max-w-25" src="/public/logo.png" alt="Logo">
+            <div class="flex gap-3 items-center">
+                <ul class="flex gap-8 md:gap-15 text-lg font-medium">
+                    <li><a href="home.html" class="hover:text-gray-700">Home</a></li>
+                    <li><a href="mapa.html" class="hover:text-gray-700">Mapa</a></li>
+                    <li><a href="premios.html" class="font-bold text-emerald-700">Prêmios</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-row gap-4 items-baseline mr-5">
+            </div>
+        </nav>
+    </header>
+    <main class="min-h-screen bg-gray-50 pb-10">
+        <section class="bg-emerald-50 py-10 mb-8 shadow-md">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-extrabold text-emerald-700 text-center mb-6">Seu Mundo de Recompensas
+                    Sustentáveis</h1>
+                <div
+                    class="flex justify-between items-center w-full max-w-lg mx-auto h-[2%] rounded-[1.25rem] bg-white my-4 p-5 shadow-xl border border-emerald-200">
+                    <div class="flex flex-col">
+                        <p class="text-xl font-medium text-gray-600">Seu Saldo Atual</p>
+                        <p class="text-[2.5rem] font-bold text-amber-500" id="pontos-usuario">540 pts</p>
+                    </div>
+                    <i class="bi bi-recycle text-5xl text-emerald-700"></i>
+                </div>
+                <nav class="flex justify-center flex-wrap gap-3 mt-6">
+                    <button
+                        class="px-5 py-2 text-white bg-emerald-700 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-emerald-800 active">Todos</button>
+                    <button
+                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Eco-Produtos</button>
+                    <button
+                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Serviços</button>
+                    <button
+                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Doações</button>
+                </nav>
+            </div>
+        </section>
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Catálogo de Resgate</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=1');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Cupom de 20% em Loja Parceira</h3>
+                        <p class="text-gray-600 text-sm mb-4">Desconto em produtos orgânicos ou de baixo impacto.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 100 Pontos
+                        </div>
+
+                        <button
+                            class="w-full py-2 bg-emerald-700 text-white font-semibold rounded-lg shadow-md hover:bg-emerald-800 transition duration-300  cursor-pointer">
+                            Resgatar
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=2');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ecobag de Algodão Orgânico</h3>
+                        <p class="text-gray-600 text-sm mb-4">Leve e resistente. Ideal para evitar sacolas plásticas.
+                        </p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 350 Pontos
+                        </div>
+
+                        <button
+                            class="w-full py-2 bg-emerald-700 text-white font-semibold rounded-lg shadow-md hover:bg-emerald-800 transition duration-300 cursor-pointer">
+                            Resgatar
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-200 rounded-xl shadow-lg overflow-hidden opacity-60 pointer-events-none border border-gray-300">
+                    <div class="h-40 bg-cover bg-center grayscale"
+                        style="background-image: url('https://picsum.photos/400/200?random=3');">
+                    </div>
+                    <div class="p-5 text-center relative">
+                        <span
+                            class="absolute top-[-10px] right-5 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Faltam
+                            60 pts</span>
+
+                        <h3 class="text-xl font-bold text-gray-500 mb-2">Mini-Curso de Compostagem</h3>
+                        <p class="text-gray-500 text-sm mb-4">Aprenda a transformar seu lixo orgânico em adubo.</p>
+
+                        <div class="text-2xl font-extrabold text-gray-500 mb-4">
+                            <i class="fas fa-leaf text-gray-500 mr-2"></i> 600 Pontos
+                        </div>
+
+                        <button class="w-full py-2 bg-gray-500 text-white font-semibold rounded-lg cursor-not-allowed">
+                            Pontos Insuficientes
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=4');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Doação para Projeto de Limpeza de Praias</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ajude a financiar a limpeza de 1m² de praia.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 200 Pontos
+                        </div>
+                        <button
+                            class="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Doar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="carregaPontos.js"></script>
+</body>
+</html>

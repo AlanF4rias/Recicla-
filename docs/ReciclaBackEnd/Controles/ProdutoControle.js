@@ -1,4 +1,4 @@
-const pool = require('../config/db');
+const pool = require('../ConfigBD/BD.js');
 
 // CNPJ cadastra um produto novo
 exports.cadastrarProduto = async (req, res) => {

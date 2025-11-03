@@ -48,74 +48,106 @@ function animateOutIn(fromEl, toEl){
 radPessoa.addEventListener('change', ()=> show('pessoa'));
 radEmpresa.addEventListener('change', ()=> show('empresa'));
 
-// --- Validação de senhas PESSOA ---
-const formPessoa = document.getElementById('formPessoa');
-const senhaInputPessoa = document.getElementById('u-senha');
-const senhaConfInputPessoa = document.getElementById('u-senhaconf');
-const submitPessoaBtn = formPessoa.querySelector('button[type="submit"]');
+// --- Envio dos dados para a API ---
+document.addEventListener('DOMContentLoaded', () => {
+    const formRegistroPessoa = document.getElementById('formPessoa');
+    
+    formRegistroPessoa.addEventListener('submit', async (evento) => {
+        console.log('Evento de submit capturado para Pessoa Física');
+        evento.preventDefault();
+        // 1. Coleta os dados do formulário
+        const nome = document.getElementById('u-nome').value;
+        const email = document.getElementById('u-email').value;
+        const cpf = document.getElementById('u-cpf').value;
+        const telefone = document.getElementById('u-fone').value;
+        const senha = document.getElementById('u-senha').value;
+        const senhaConf = document.getElementById('u-senhaconf').value;
 
-const erroSenhaElPessoa = document.createElement('p');
-erroSenhaElPessoa.textContent = 'As senhas não conferem ou estão vazias. Por favor, verifique.';
-erroSenhaElPessoa.className = 'text-red-600 text-sm md:col-span-2 hidden'; 
+        // Validação simples de senha
+        if (senha.length === 0 || senha !== senhaConf) {
+            alert('As senhas não conferem ou estão vazias. Por favor, verifique.');
+            return;
+        }
 
-const buttonContainerPessoa = submitPessoaBtn.parentElement;
-formPessoa.insertBefore(erroSenhaElPessoa, buttonContainerPessoa);
+        // 2. Monta o objeto JSON
+        const dadosUsuario = { nome, email, cpf, telefone, senha, senhaConf };
 
-formPessoa.addEventListener('submit', function(event) {
-    const senha = senhaInputPessoa.value;
-    const confirmacao = senhaConfInputPessoa.value;
+        try {
+            // 3. Envia a requisição para a API
+            const resposta = await fetch('http://localhost:3001/api/auth/cadastro/cpf', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dadosUsuario) 
+            });
 
-    if (senha.length === 0 || senha !== confirmacao) {
-        event.preventDefault();
-        erroSenhaElPessoa.classList.remove('hidden'); 
-    } else {
-        erroSenhaElPessoa.classList.add('hidden'); 
-    }
+            // 4. Analisa a resposta
+            if (resposta.status === 201) {
+                alert('Usuário criado com sucesso! Faça o login.');
+                window.location.href = '../Login/login.html'; 
+            } else {
+                const erro = await resposta.json();
+                alert(`Erro ao registrar: ${erro.mensagem}`);
+            }
+        } catch (erro) {
+            console.error('Falha na comunicação com a API:', erro);
+        }
+    });
 });
 
-function esconderErroAoDigitarPessoa() {
-    if (!erroSenhaElPessoa.classList.contains('hidden')) {
-        erroSenhaElPessoa.classList.add('hidden');
-    }
-}
-senhaInputPessoa.addEventListener('input', esconderErroAoDigitarPessoa);
-senhaConfInputPessoa.addEventListener('input', esconderErroAoDigitarPessoa);
+document.addEventListener('DOMContentLoaded', () => {
+    const formRegistroCNPJ = document.getElementById('formEmpresa');
 
+    formRegistroCNPJ.addEventListener('submit', async (evento) => {
+        evento.preventDefault();
 
-// --- Validação de senhas EMPRESA ---
-const formEmpresa = document.getElementById('formEmpresa');
-const senhaInputEmpresa = document.getElementById('e-senha');
-const senhaConfInputEmpresa = document.getElementById('e-senhaconf');
-const submitBtnEmpresa = formEmpresa.querySelector('button[type="submit"]');
+        // 1. Coleta os dados do formulário
+        const razaoSocial = document.getElementById('e-razao').value;
+        const nomeFantasia = document.getElementById('e-fantasia').value;
+        const inscEstadual = document.getElementById('e-insc').value;
+        const cnpj = document.getElementById('e-cnpj').value;
+        const email = document.getElementById('e-email').value;
+        const telefone = document.getElementById('e-fone').value;
+        const senha = document.getElementById('e-senha').value;
+        const senhaConf = document.getElementById('e-senhaconf').value;
+        
+        // Validação simples de senha
+        if (senha.length === 0 || senha !== senhaConf) {
+            alert('As senhas não conferem ou estão vazias. Por favor, verifique.');
+            return;
+        }
 
-const erroSenhaElEmpresa = document.createElement('p');
-erroSenhaElEmpresa.textContent = 'As senhas não conferem ou estão vazias. Por favor, verifique.';
-erroSenhaElEmpresa.className = 'text-red-600 text-sm md:col-span-2 hidden'; 
+        // 2. Monta o objeto JSON
+        const dadosUsuario = { 
+            razaoSocial, 
+            nomeFantasia,
+            inscEstadual, 
+            cnpj, 
+            email, 
+            telefone, 
+            senha,
+            senhaConf 
+        };
 
+        try {
+            // 3. Envia a requisição para a API
+            const resposta = await fetch('http://localhost:3001/api/auth', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dadosUsuario)
+            });
 
-const buttonContainerEmpresa = submitBtnEmpresa.parentElement;
-formEmpresa.insertBefore(erroSenhaElEmpresa, buttonContainerEmpresa);
-
-formEmpresa.addEventListener('submit', function(event) {
-  
-    const senha = senhaInputEmpresa.value;
-    const confirmacao = senhaConfInputEmpresa.value;
-
-    if (senha.length === 0 || senha !== confirmacao) {
-        event.preventDefault(); 
-        erroSenhaElEmpresa.classList.remove('hidden'); 
-    } else {
-        erroSenhaElEmpresa.classList.add('hidden'); 
-    }
+            // 4. Analisa a resposta
+            if (resposta.status === 201) {
+                alert('Empresa criada com sucesso! Faça o login.');
+                window.location.href = '../Login/login.html'; 
+            } else {
+                const erro = await resposta.json();
+                alert(`Erro ao registrar: ${erro.mensagem}`);
+            }
+        } catch (erro) {
+            console.error('Falha na comunicação com a API:', erro);
+        }
+    });
 });
-
-function esconderErroAoDigitarEmpresa() {
-    if (!erroSenhaElEmpresa.classList.contains('hidden')) {
-        erroSenhaElEmpresa.classList.add('hidden');
-    }
-}
-
-senhaInputEmpresa.addEventListener('input', esconderErroAoDigitarEmpresa);
-senhaConfInputEmpresa.addEventListener('input', esconderErroAoDigitarEmpresa);
 
 
