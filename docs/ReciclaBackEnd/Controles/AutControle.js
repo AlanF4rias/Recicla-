@@ -82,7 +82,7 @@ exports.login = async (req, res) => {
 
         // 5. Gera o token com o ID e o TIPO do usuário
         const token = gerarToken(usuario.ID, tipo);
-        res.json({ mensagem: "Login bem-sucedido!", token, tipo, nome: usuario.Nome || usuario.NomeFantasia });
+        res.json({ mensagem: "Login bem-sucedido!", token:token, tipo:tipo, nome: usuario.Nome || usuario.NomeFantasia, pontos: usuario.Pontos || 0 });
 
     } catch (error) {
         console.error(error);
