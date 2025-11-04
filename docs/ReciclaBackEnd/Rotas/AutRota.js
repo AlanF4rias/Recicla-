@@ -11,4 +11,7 @@ router.post('/cadastro/cnpj', autControle.registrarCNPJ);
 // Rota para login unificado
 router.post('/login', autControle.login);
 
+// Rota para recuperação de senha
+router.post('/recuperarSenha', autControle.recuperarSenha);
+
 module.exports = router;

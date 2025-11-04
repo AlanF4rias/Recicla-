@@ -64,3 +64,31 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         alert('Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde.');
     }
 });
+
+// Envio do formulário de recuperação de senha
+const recForm = document.getElementById('recForm');
+if (recForm) {
+    recForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('recEmail').value;
+        try {
+            const resposta = await fetch('http://localhost:3001/api/auth/recuperarSenha', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+
+            const dados = await resposta.json();
+            if (resposta.ok) {
+                // Em desenvolvimento mostramos o token no alert; em produção envie por e-mail
+                alert(dados.mensagem + '\nToken (dev): ' + (dados.token || '---'));
+                closeRecover();
+            } else {
+                alert(dados.mensagem || 'Erro ao solicitar recuperação de senha.');
+            }
+        } catch (err) {
+            console.error('Erro ao solicitar recuperação:', err);
+            alert('Erro de conexão com a API.');
+        }
+    });
+}

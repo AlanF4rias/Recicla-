@@ -21,7 +21,8 @@
                 <ul class="flex gap-8 md:gap-15 text-lg font-medium">
                     <li><a href="home.html" class="hover:text-gray-700">Home</a></li>
                     <li><a href="mapa.html" class="hover:text-gray-700">Mapa</a></li>
-                    <li><a href="premios.html" class="font-bold text-emerald-700">Prêmios</a></li>
+                    <li><a href="premios.html" class="hover:text-gray-700">Prêmios</a></li>
+                    <li><a href="../index.html" class="hover:text-gray-700">Logout</a></li>
                 </ul>
             </div>
             <div class="flex flex-row gap-4 items-baseline mr-5">
@@ -41,21 +42,21 @@
                     <i class="bi bi-recycle text-5xl text-emerald-700"></i>
                 </div>
                 <nav class="flex justify-center flex-wrap gap-3 mt-6">
-                    <button
-                        class="px-5 py-2 text-white bg-emerald-700 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-emerald-800 active">Todos</button>
-                    <button
-                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Eco-Produtos</button>
-                    <button
-                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Serviços</button>
-                    <button
-                        class="px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white">Doações</button>
+                    <button data-filter="all"
+                        class="filter-button px-5 py-2 text-emerald-700 bg-white border border-emerald-700 rounded-full text-sm font-semibold shadow-md transition duration-300 active">Todos</button>
+                    <button data-filter="produto"
+                        class="filter-button px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300  ">Eco-Produtos</button>
+                    <button data-filter="servico"
+                        class="filter-button px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300  ">Serviços</button>
+                    <button data-filter="doacao"
+                        class="filter-button px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 ">Doações</button>
                 </nav>
             </div>
         </section>
         <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Catálogo de Resgate</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="1" data-produto-preco="50">
+                <div class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="1" data-produto-preco="50" data-category="produto">
                     <div class="h-40 bg-cover bg-center"
                         style="background-image: url('https://picsum.photos/400/200?random=1');">
                     </div>
@@ -74,7 +75,7 @@
                 </div>
 
                 <div
-                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="2" data-produto-preco="350">
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="2" data-produto-preco="350" data-category="produto">
                     <div class="h-40 bg-cover bg-center"
                         style="background-image: url('https://picsum.photos/400/200?random=2');">
                     </div>
@@ -96,27 +97,24 @@
                 </div>
 
                 <div
-                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden pointer-events-none border border-gray-300">
-                    <div class="h-40 bg-cover bg-center grayscale"
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="4" data-produto-preco="600" data-category="servico">
+                    <div class="h-40 bg-cover bg-center"
                         style="background-image: url('https://picsum.photos/400/200?random=3');">
                     </div>
-                    <div class="p-5 text-center relative">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Mini-Curso de Compostagem</h3>
-                        <p class="text-gray-500 text-sm mb-4">Aprenda a transformar seu lixo orgânico em adubo.</p>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Mini Curso de compostagem</h3>
+                        <p class="text-gray-600 text-sm mb-4">Aprenda compostagem do zero com especilistas.</p>
 
                         <div class="text-2xl font-extrabold text-amber-500 mb-4">
-                            <i class="fas fa-leaf text-amber-500 mr-2"></i> 600 Pontos
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 600 Pontos
                         </div>
-
-                        <button class="button-resgate w-full py-2 bg-emerald-700 text-white font-semibold rounded-lg cursor-not-allowed" id="buttonResgate">
-                            Resgatar
-                        </button>
-                        <p class="pontos-faltantes-text text-red-500 text-sm mt-2"></p>
+                        <button
+                            class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Doar</button>
                     </div>
                 </div>
 
                 <div
-                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="3" data-produto-preco="200">
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="3" data-produto-preco="200" data-category="doacao">
                     <div class="h-40 bg-cover bg-center"
                         style="background-image: url('https://picsum.photos/400/200?random=4');">
                     </div>
@@ -129,6 +127,78 @@
                         </div>
                         <button
                             class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Doar</button>
+                    </div>
+                </div>
+
+                <div
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="5" data-produto-preco="100" data-category="produto">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=6');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Caneca Ecológica</h3>
+                        <p class="text-gray-600 text-sm mb-4">Caneca feita com materiais reciclados.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 100 Pontos
+                        </div>
+                        <button
+                            class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Resgatar</button>
+                        <p class="pontos-faltantes-text text-red-500 text-sm mt-2"></p>
+                    </div>
+                </div>
+
+                <div
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="7" data-produto-preco="300" data-category="produto">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=7');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Mochila Reciclada</h3>
+                        <p class="text-gray-600 text-sm mb-4">Mochila feitas com materias Reaproveitados.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 300 Pontos
+                        </div>
+                        <button
+                            class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Resgatar</button>
+                        <p class="pontos-faltantes-text text-red-500 text-sm mt-2"></p>
+                    </div>
+                </div>
+
+                <div
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="8" data-produto-preco="150" data-category="doacao">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=8');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Doação de Árvore</h3>
+                        <p class="text-gray-600 text-sm mb-4">Plante um Árvore em seu nome.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 150 Pontos
+                        </div>
+                        <button
+                            class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Doar</button>
+                        <p class="pontos-faltantes-text text-red-500 text-sm mt-2"></p>
+                    </div>
+                </div>
+
+                <div
+                    class="CardProduto bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:scale-[1.02] border border-gray-100" data-produto-id="16" data-produto-preco="160" data-category="servico">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://picsum.photos/400/200?random=9');">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Passeio Ecológico</h3>
+                        <p class="text-gray-600 text-sm mb-4">Participe de uma passeio guiado por áreas naturais preservadas.</p>
+
+                        <div class="text-2xl font-extrabold text-amber-500 mb-4">
+                            <i class="fas fa-leaf text-emerald-700 mr-2"></i> 160 Pontos
+                        </div>
+                        <button
+                            class="button-resgate w-full py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300  cursor-pointer">Resgatar</button>
+                        <p class="pontos-faltantes-text text-red-500 text-sm mt-2"></p>
                     </div>
                 </div>
             </div>
@@ -152,7 +222,17 @@
 
             // Encontra os elementos do card
             const botao = card.querySelector('.button-resgate');
-            const textoFaltante = card.querySelector('.pontos-faltantes-text');
+            let textoFaltante = card.querySelector('.pontos-faltantes-text');
+
+            // Se não existir o elemento de pontos faltantes, cria um (evita erros de null)
+            if (!textoFaltante) {
+                const cont = card.querySelector('.p-5') || card;
+                textoFaltante = document.createElement('p');
+                textoFaltante.className = 'pontos-faltantes-text text-red-500 text-sm mt-2';
+                cont.appendChild(textoFaltante);
+            }
+
+            if (!botao) return; // nada a fazer se não houver botão
 
             if (pontosDoUsuario >= preco) {
                 // Usuário PODE resgatar
@@ -169,7 +249,7 @@
                 botao.disabled = true;
                 botao.innerText = 'Pontos Insuficientes';
                 botao.className = "button-resgate w-full py-2 bg-gray-500 text-white font-semibold rounded-lg cursor-not-allowed";
-                
+
                 const faltam = preco - pontosDoUsuario;
                 textoFaltante.innerText = `Faltam ${faltam} pontos`;
             }
@@ -218,6 +298,39 @@
         }
     }
     document.addEventListener('DOMContentLoaded', atualizarVisibilidadeCards);
+
+    // --- Filtragem por categoria ---
+    const filterButtons = document.querySelectorAll('.filter-button');
+    function applyFilter(filter) {
+        const cards = document.querySelectorAll('.CardProduto');
+        cards.forEach(card => {
+            const cat = card.dataset.category || 'produto';
+            if (filter === 'all' || cat === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        filterButtons.forEach(btn => {
+            const isActive = btn.dataset.filter === filter;
+            if (isActive) {
+                btn.className = 'filter-button px-5 py-2 bg-emerald-700 rounded-full text-sm font-semibold shadow-md transition duration-300 hover:bg-emerald-800 text-white';
+            } else {
+                btn.className = 'filter-button px-5 py-2 text-emerald-700 border border-emerald-700 bg-white rounded-full text-sm font-semibold transition duration-300 hover:bg-emerald-700 hover:text-white';
+            }
+        });
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const f = btn.dataset.filter || 'all';
+            applyFilter(f);
+        });
+    });
+
+    // Aplica filtro inicial (todos)
+    applyFilter('all');
 </script>
 </body>
 </html>
