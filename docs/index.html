@@ -14,7 +14,7 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <header class="bg-emerald-200 flex flex-col justify-center md:flex-row md:justify-between items-center">
+    <header class="bg-emerald-200 flex flex-col justify-center md:flex-row md:justify-around items-center gap-20">
         <img class="w-40 md:w-20" id="logo" src="/public/logo.png" alt="">
         <div class="md:flex md:flex-row md:justify-between">
             <nav class="flex justify-between items-center text-black bg-emerald-200 py-3 px-5">
@@ -27,8 +27,7 @@
                 </div>
             </nav>
         </div>
-        <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-            <div class="flex flex-col md:flex-row md:mt-10">
+            <div class="flex flex-block md:flex-row gap-4 mb-3">
                 <button
                     class="bg-emerald-400 border-1 w-35 md:w-25 text-center rounded-lg hover:bg-emerald-800 hover:text-white"
                     type="button"><a href="../docs/Login/login.html">Login</a></button>
@@ -37,7 +36,6 @@
                     tenho
                     conta</a>
             </div>
-        </div>
     </header>
     <main>
         <h1 class="text-2xl text-black uppercase text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5] mt-15"
@@ -96,11 +94,11 @@
                 <p>🚀</p>
             </div>
         </section>
-        <section class="bg-black flex flex-col justify-center h-45 md:h-70" id="usuarios">
+        <section class="bg-gray-50 flex flex-col justify-center items-center h-45 md:h-70" id="usuarios">
             <h1
-                class="text-2xl text-white uppercase text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5]">
+                class="text-2xl text-gray-700 w-[40%] bg-emerald-200 rounded-xl text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5]">
                 USUÁRIOS</h1>
-            <div class="flex flex-row justify-center mt-10 gap-30">
+            <div class="grid grid-cols-2 md:flex md:flex-row md:gap-60 md:mt-20 justify-center gap-2 mt-4">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/usuario1.jpg" alt="">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/usuario2.jpg" alt="">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/usuario3.jpg" alt="">
@@ -109,7 +107,7 @@
         </section>
         <section class="flex flex-col">
             <h1
-                class="text-2xl text-black uppercase text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5] mt-15">
+                class="text-2xl text-black text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5] mt-15">
                 AVALIAÇÕES DOS USUÁRIOS</h1>
             <div class="flex flex-col md:flex-row">
                 <div class="m-10 p-5 shadow-xl/60 bg-emerald-50">
@@ -159,11 +157,11 @@
                 </div>
             </div>
         </section>
-        <section class="bg-black flex flex-col justify-center h-45 md:h-70" id="parceiros">
+        <section class="bg-gray-50 flex flex-col justify-center items-center h-45 md:h-70" id="parceiros">
             <h1
-                class="text-2xl text-white uppercase text-center items-center font-bold text-shadow-lg/40 text-shadow-[#ecfdf5]">
+                class="rounded-xl w-[40%] text-2xl bg-emerald-200 uppercase text-center items-center text-gray-700">
                 PARCEIROS</h1>
-            <div class="flex flex-row justify-center mt-10 gap-30">
+            <div class="grid grid-cols-2 md:flex md:flex-row md:gap-60 md:mt-10 justify-center gap-2 mt-4">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/empresa1.jpg" alt="">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/empresa2.jpg" alt="">
                 <img class="w-38 h-22 md:w-28 md:h-28 rounded-full" src="/public/empresa3.jpg" alt="">
@@ -176,21 +174,21 @@
                 AVALIAÇÕES DOS PARCEIROS</h1>
             <div class="flex flex-col md:flex-row">
                 <div class="m-10 p-5 shadow-xl/60 bg-emerald-50">
-                    <h1 class="text-center text-sm font-bold">Loja ECO-Wear (Moda Sustentável)</h1>
+                    <h1 class="text-center text-sm font-bold">McDonalds</h1>
                     <p class="text-[15px] mt-4 text-justify">"Os usuários que chegam até nós através do [Nome do Seu
                         App/Site] são super engajados! Já fizemos 50 trocas de pontos
                         por nossas camisetas orgânicas. O público é de altíssima qualidade e realmente alinhado com
                         nossos valores."</p>
                 </div>
                 <div class="m-10 p-5 shadow-xl/60 bg-emerald-50">
-                    <h1 class="text-center text-sm font-bold">Cafeteria Grão Verde</h1>
+                    <h1 class="text-center text-sm font-bold">Nike</h1>
                     <p class="text-[15px] mt-4 text-justify">"Os usuários que chegam até nós através do [Nome do Seu
                         App/Site] são super engajados! Já fizemos 50 trocas de pontos
                         por nossas camisetas orgânicas. O público é de altíssima qualidade e realmente alinhado com
                         nossos valores."</p>
                 </div>
                 <div class="m-10 p-5 shadow-xl/60 bg-emerald-50">
-                    <h1 class="text-center text-sm font-bold">TecnoReboot Eletrônicos Recondicionados</h1>
+                    <h1 class="text-center text-sm font-bold">Michelin</h1>
                     <p class="text-[15px] mt-4 text-justify">"Os usuários que chegam até nós através do [Nome do Seu
                         App/Site] são super engajados! Já fizemos 50 trocas de pontos
                         por nossas camisetas orgânicas. O público é de altíssima qualidade e realmente alinhado com
@@ -198,7 +196,7 @@
                     </p>
                 </div>
                 <div class="m-10 p-5 shadow-xl/60 bg-emerald-50">
-                    <h1 class="text-center text-sm font-bold">Academia Move</h1>
+                    <h1 class="text-center text-sm font-bold">Starbucks</h1>
                     <p class="text-[15px] mt-4 text-justify">"Os usuários que chegam até nós através do [Nome do Seu
                         App/Site] são super engajados! Já fizemos 50 trocas de pontos
                         por nossas camisetas orgânicas. O público é de altíssima qualidade e realmente alinhado com
